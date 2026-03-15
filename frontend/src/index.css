@@ -1,0 +1,91 @@
+@import "tailwindcss";
+
+@font-face {
+  font-family: 'Broadway';
+  src: local('Broadway'), url('https://fonts.cdnfonts.com/s/13698/BROADW.woff') format('woff');
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #121212;
+  color: white;
+  overflow-x: hidden;
+}
+
+#root {
+  min-height: 100vh;
+  width: 100%;
+}
+
+@keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
+}
+
+@keyframes blink {
+  50% { border-color: transparent }
+}
+
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+@keyframes glowShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+@keyframes marquee {
+  0% { transform: translateX(100vw); }
+  100% { transform: translateX(-100%); }
+}
+
+@keyframes growLine {
+  from { width: 0; }
+  to { width: 100%; }
+}
+
+.font-broadway {
+  font-family: 'Broadway', sans-serif;
+}
+
+.typing-animation {
+  overflow: hidden;
+  white-space: nowrap;
+  border-right: 3px solid #ff0000;
+  width: 0;
+  animation: typing 1.5s steps(30) forwards, blink 0.7s step-end infinite;
+}
+
+.gradient-bg {
+  background: linear-gradient(135deg, #0a0f1e, #0d1b2a, #1a1f3c, #002147, #220016);
+  background-size: 400% 400%;
+  animation: gradientShift 18s ease infinite;
+}
+
+.glow-bg {
+  background: linear-gradient(270deg, #0a0f1e, #1c2b50, #0a0f1e);
+  background-size: 600% 600%;
+  animation: glowShift 12s ease infinite;
+}
+
+.marquee-text {
+  display: inline-block;
+  white-space: nowrap;
+  animation: marquee 12s linear infinite;
+}
+
+.grow-line {
+  height: 2px;
+  background: currentColor;
+  animation: growLine 2s forwards;
+  width: 0;
+}
